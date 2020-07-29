@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head th:replace="/fragments/head"> </head>
+
+<body>
+    <nav th:replace="/fragments/nav::nav-admin"></nav>
+
+    <div class="container">
+
+        <h1 class="display-2">Books</h1>
+        <a href="/admin/books/add" class="btn btn-primary mb-5">Add new</a>
+
+        <div th:if="${message}" th:text="${message}" th:class="${'alert '+ alertClass}"></div>
+
+        <div th:if="${!books.empty}">
+            <table class="table">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Image</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr th:each="book :${books} ">
+                    <td th:text="${book.title}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td>
+                        <img style="width: 100px;" th:src="@{'/media/' + ${book.image}}" alt="">
+                    </td>
+                    <td th:text="${cats[__${book.categoryId}__]}"></td>
+                    <td th:text="'€' + ${book.price}"></td>
+                    <td><a th:href="@{'/admin/books/edit/'+ ${book.id}}">Edit</a></td>
+                    <td><a th:href="@{'/admin/books/delete/'+ ${book.id}}" class="confirmDeletion">Delete</a></td>
+
+
+                </tr>
+            </table>
+        </div>
+
+        <div th:unless="${!books.empty}">
+            <h4 class="display-4">There are no books yet</h4>
+        </div>
+    </div>
+
+
+
+    <div th:replace="/fragments/footer"></div>
+
+</body>
+
+</html>
