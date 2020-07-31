@@ -28,7 +28,7 @@
                     <td th:text="${book.title}"></td>
                     <td th:text="${book.author}"></td>
                     <td>
-                        <img style="width: 100px;" th:src="@{'/media/' + ${book.image}}" alt="">
+                        <img style="width: 100px;" th:src="@{'/media/' + ${book.image}}">
                     </td>
                     <td th:text="${cats[__${book.categoryId}__]}"></td>
                     <td th:text="'€' + ${book.price}"></td>
