@@ -8,7 +8,8 @@
 
     <div class="container">
 
-        <h1 th:text="'Edit ' + ${book.title}" class="display-2"></h1>
+
+        <h1 class="display-2" th:text="'Edit ' + ( ${bookTitle} ?:${book.title} )"></h1>
 
         <a href="/admin/books" class="btn btn-primary mb-5">Back to books</a>
 

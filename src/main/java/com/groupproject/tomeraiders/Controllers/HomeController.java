@@ -1,13 +1,13 @@
-package com.groupproject.tomeraiders.Controllers;
+// package com.groupproject.tomeraiders.Controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.stereotype.Controller;
+// import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
-public class HomeController {
+// @Controller
+// public class HomeController {
 
-    @GetMapping("/")
-    public String Home() {
-        return "home";
-    }
-}
+// @GetMapping("/books")
+// public String home() {
+// return "home";
+// }
+// }
