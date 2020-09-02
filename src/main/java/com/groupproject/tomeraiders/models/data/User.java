@@ -33,7 +33,7 @@ public class User implements UserDetails {
     @Size(min = 5, message = "Username must be at least 5 characters long")
     private String username;
 
-    @Size(min = 10, message = "Password must be at least 10 characters long")
+    @Size(min = 5, message = "Password must be at least 10 characters long")
     private String password;
 
     @Transient
