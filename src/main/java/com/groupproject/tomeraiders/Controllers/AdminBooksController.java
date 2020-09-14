@@ -193,9 +193,6 @@ public class AdminBooksController {
             book.setSlug(slug);
 
             if (!file.isEmpty()) {
-                // Path path2 = Paths.get("src/main/resources/static/media/" +
-                // currentBook.getImage());
-                // Files.delete(path2);
                 book.setImage(filename);
                 Files.write(path, bytes);
             } else {
@@ -211,12 +208,6 @@ public class AdminBooksController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable int id, RedirectAttributes redirectAttributes) throws IOException {
 
-        Book book = bookRepo.getOne(id);
-        Book currentBook = bookRepo.getOne(book.getId());
-
-        // Path path2 = Paths.get("src/main/resources/static/media/" +
-        // currentBook.getImage());
-        // Files.delete(path2);
         bookRepo.deleteById(id);
 
         redirectAttributes.addFlashAttribute("message", "Book deleted");

@@ -27,10 +27,6 @@ public class AdminPagesController {
     @Autowired
     private PageRepository pageRepo;
 
-    // public AdminPagesController(PageRepository pageRepo) {
-    // this.pageRepo = pageRepo;
-    // }
-
     @GetMapping
     public String index(Model model) {
 
@@ -43,8 +39,6 @@ public class AdminPagesController {
 
     @GetMapping("/add")
     public String add(@ModelAttribute Page page) {
-
-        // model.addAttribute("page", new Page());
 
         return "admin/pages/add";
     }

@@ -5,7 +5,8 @@
 
 <body>
 
-    <nav th:replace="/fragments/nav :: nav-front"></nav>
+    <nav th:replace="/fragments/nav :: nav-front">
+    </nav>
 
     <div class="container-fluid mt-5">
         <div class="row">
@@ -56,7 +57,6 @@
               </ul>
           </nav>
 
-        </div>
 
     <div th:replace="/fragments/footer"></div>
 
@@ -76,7 +76,7 @@ $.get(url, {}, function (data){
     $('div.cart').html(data);
 }).done(function () {
 $this.parent().parent().find('div.bookAdded').fadeIn();
-$this.next().removeClass('d-none');
+$this.next().addClass('d-none');
 setTimeout(() =>{
 $this.parent().parent().find('div.bookAdded').fadeOut();
 },  1000);
